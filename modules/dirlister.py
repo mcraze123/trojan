@@ -2,5 +2,10 @@ import os
 
 def run(**args):
     print "[*] In dirlister module."
-    files = os.listdir(".")
-    return str(files)
+    for a in args:
+        dirname=args[a]
+        files = os.listdir(dirname)
+        return str(files)
+
+# run like this:
+#print run(**{'dirname': "."})

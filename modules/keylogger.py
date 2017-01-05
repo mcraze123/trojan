@@ -64,10 +64,11 @@ def KeyStroke(event):
     # pass execution to next hook registered
     return True
 
-# create and register a hook manager
-kl = pyHook.HookManager()
-kl.KeyDown = KeyStroke
+def run(**args):
+    # create and register a hook manager
+    kl = pyHook.HookManager()
+    kl.KeyDown = KeyStroke
 
-# register the hook and execute forever
-kl.HookKeyboard()
-pythoncom.PumpMessages()
+    # register the hook and execute forever
+    kl.HookKeyboard()
+    pythoncom.PumpMessages()
